@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import NoScroll from "./Layouts/NoScroll.tsx";
+import Game from "./Components/Game/Game.tsx";
+import GameStateProvider from "./State/GameStateProvider.tsx";
+import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 
 function App() {
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#d1591d"
+      }
+    }
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <NoScroll title="Emoji Whack-A-Mole!" subtitle="Score 5 points to win!">
+        <GameStateProvider>
+          <Game />
+        </GameStateProvider>
+      </NoScroll>
+    </ThemeProvider>
   );
 }
 
