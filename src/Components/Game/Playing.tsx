@@ -86,10 +86,10 @@ const Playing = () => {
   }, [gameState.state.CorrectPicks, gameState.state.IncorrectPicks]);
 
   useEffect(() => {
-    if (gameState.state.ActiveCircleIndex === null) {
+    if (gameState.state.ActiveCircleIndex === null && gameState.state.PickedCircleIndex === null) {
       startNewCircleTimer();
     }
-  }, [gameState.state.ActiveCircleIndex]);
+  }, [gameState.state.ActiveCircleIndex, gameState.state.PickedCircleIndex]);
 
   return (
     <div className="flex flex-col items-center space-y-6 sm:space-y-10">
