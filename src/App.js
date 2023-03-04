@@ -3,7 +3,7 @@ import React from "react";
 import NoScroll from "./Layouts/NoScroll.tsx";
 import Game from "./Components/Game/Game.tsx";
 import GameStateProvider from "./State/GameStateProvider.tsx";
-import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 function App() {
   const theme = createTheme({
